@@ -56,7 +56,9 @@ plt.ylabel("Akkumulerte døgngrader")
 plt.xlabel("Dato")
 plt.ylim(0,1000)
 
-plt.show()
+plt.savefig("plot.png")
+
+#plt.show()
 
 bw = True
 col = ["#a6611a", "#dfc27d", "#80cdc1", "#018571"]
