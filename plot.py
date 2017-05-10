@@ -38,9 +38,6 @@ for i in lines:
     except:
         print(i)
 
-print(date)
-
-
 x = np.arange(len(date))
 
 linestyle = ["-","--","-.",":"]
@@ -55,6 +52,20 @@ plt.legend()
 plt.ylabel("Akkumulerte døgngrader")
 plt.xlabel("Dato")
 plt.ylim(0,1000)
+
+mndSkift = [0,31,61,92,123]
+mnd = ["Mai","Juni","Juli","August", "September"]
+
+plt.xticks(mndSkift, mnd)
+#plt.xticklabels(mnd)
+
+for i in mndSkift:
+    print(date[i])
+print(date[0])
+print(date[31])
+print(date[61])
+print(date[92])
+print(date[123])
 
 plt.savefig("plot.png")
 
