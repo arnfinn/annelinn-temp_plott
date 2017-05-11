@@ -49,12 +49,6 @@ plt.plot(x,aar2013, label = "2013", ls = linestyle[k], color = "black")
 k += 1
 plt.plot(x,aar2014, label = "2014", ls = linestyle[k], color = "black")
 
-plt.legend()
-plt.ylabel("Akkumulerte døgngrader")
-#plt.xlabel("Dato")
-plt.ylim(0,1000)
-plt.xlim(0,len(date))
-
 early = [106,75,90]
 middle = [111,89,95]
 late = [119,97,102]
@@ -63,9 +57,17 @@ early_val = [aar2012[early[0]],aar2013[early[1]],aar2014[early[2]]]
 middle_val = [aar2012[middle[0]],aar2013[middle[1]],aar2014[middle[2]]]
 late_val = [aar2012[late[0]],aar2013[late[1]],aar2014[late[2]]]
 
-plt.scatter(early,early_val)
-plt.scatter(middle, middle_val)
-plt.scatter(late, late_val)
+plt.scatter(early,early_val, c="black", label = "Early")
+plt.scatter(middle, middle_val, c = "black", marker = "v", label = "Middle")
+plt.scatter(late, late_val, c = "black", marker = "D", label = "Late")
+
+plt.legend()
+
+plt.ylabel("Akkumulerte døgngrader")
+#plt.xlabel("Dato")
+plt.ylim(0,1000)
+plt.xlim(0,len(date))
+
 
 mndSkift = [0,31,61,92,123]
 mnd = ["Mai","Juni","Juli","Aug.", "Sep."]
