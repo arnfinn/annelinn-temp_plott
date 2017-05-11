@@ -28,6 +28,7 @@ aar2012 = []
 aar2013 = []
 aar2014 = []
 
+# Lese inn data
 for i in lines:
     try:
         words = i.split()
@@ -50,40 +51,31 @@ plt.plot(x,aar2014, label = "2014", ls = linestyle[k], color = "black")
 
 plt.legend()
 plt.ylabel("Akkumulerte døgngrader")
-plt.xlabel("Dato")
+#plt.xlabel("Dato")
 plt.ylim(0,1000)
+plt.xlim(0,len(date))
+
+early = [106,75,90]
+middle = [111,89,95]
+late = [119,97,102]
+
+early_val = [aar2012[early[0]],aar2013[early[1]],aar2014[early[2]]]
+middle_val = [aar2012[middle[0]],aar2013[middle[1]],aar2014[middle[2]]]
+late_val = [aar2012[late[0]],aar2013[late[1]],aar2014[late[2]]]
+
+plt.scatter(early,early_val)
+plt.scatter(middle, middle_val)
+plt.scatter(late, late_val)
 
 mndSkift = [0,31,61,92,123]
-mnd = ["Mai","Juni","Juli","August", "September"]
-
-plt.xticks(mndSkift, mnd)
+mnd = ["Mai","Juni","Juli","Aug.", "Sep."]
+#plt.xticks(mndSkift, mnd)
+plt.xticks(mndSkift,"")
 #plt.xticklabels(mnd)
 
-for i in mndSkift:
-    print(date[i])
-print(date[0])
-print(date[31])
-print(date[61])
-print(date[92])
-print(date[123])
+for i in range(len(mnd)):
+    plt.text(mndSkift[i]+10, -70, mnd[i])
 
+plt.tight_layout()
 plt.savefig("plot.png")
-
-#plt.show()
-
-bw = True
-col = ["#a6611a", "#dfc27d", "#80cdc1", "#018571"]
-linestyle = ["-","-","-","-"]
-if bw:
-    col = ["black","black","black","black"]
-
-
-
-m = 0
-navn = ["TA", "TP", "EA", "MS"]
-aar = ["2012","2013","2014"]
-multe = ["102","306","Fjellgull","Fjordgull"]
-xakse = ["Early","Middle","Late","Early","Middle","Late","Early","Middle","Late"]
-
-
 
