@@ -84,7 +84,7 @@ if sys.argv[1] == "data.txt":
 
     first_legend = plt.legend(handles=[punkt1, punkt2, punkt3], loc=4, frameon=False)
     plt.gca().add_artist(first_legend)
-    plt.ylabel("Accumulated degree days ($^\circ$C)")
+    plt.ylabel("Growing Degree Days ($^\circ$C)")
     #plt.xlabel("Dato")
     plt.ylim(0,1000)
     location = 2
